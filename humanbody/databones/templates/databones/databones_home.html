@@ -10,6 +10,7 @@
             <div class="alert alert-warning">
                 <h3>{{el.title}}</h3>
                 <p>{{el.year_pub}}</p>
+                <a href="{% url 'databones-detail' el.id %}" class="btn btn-warning">Details</a>
             </div>
             {% endfor %}
         {% else %}

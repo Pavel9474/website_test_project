@@ -14,3 +14,6 @@ class Bonedata(models.Model):
     class Meta:
         verbose_name_plural = 'BoneData'
         verbose_name = 'BoneData'
+
+    def get_absolute_url(self):
+        return f'/databones/{self.id}'
