@@ -1,0 +1,20 @@
+{%extends 'main/layout.html'%}
+{%block title%}
+    База данных
+{% endblock %}
+{%block content%}
+    <div class="features">
+        <h1>База Данных</h1>
+        {% if show_bone_parameters %}
+            {% for el in show_bone_parameters %}
+            <div class="alert alert-warning">
+                <h3>{{el.title}}</h3>
+                <p>{{el.year_pub}}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+        <p> Тут пока что ничего нет </p>
+        {% endif %}
+        {# Так надо писать комментарии #}
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{%extends 'main/layout.html'%}
+{%block title%}
+    <h1>{{ title }}</h1>
+    <p>Главная страница</p>{% endblock %}
+{%block content%}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>my god</p>
+        <button class="btn btn-warning"> На страницу с данными</button>
+        {% for val in values %}
+            {% if val == 'hello' %}
+                {% filter upper %}
+                </p>{{ val }}</p>
+                {% endfilter %}
+            {% endif %}
+        {% endfor %}
+        {{ obj.age }}
+    </div>
+{% endblock %}
