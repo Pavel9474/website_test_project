@@ -64,3 +64,35 @@ form {
     width: 500px;
     margin-top: 50px;
 }
+table { table-layout:fixed;
+    width: 95%;
+    border-collapse: collapse;
+    border-style: 3px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+  tbody td {
+    text-align: center;
+  }
+  tfoot {
+    background: url(leopardskin.jpg);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #e6e5d2;
+  }
+  
+  tbody tr {
+    background-image: url(noise.png);
+  }
+  
+  table {
+    background-color: #ffda33;
+  }

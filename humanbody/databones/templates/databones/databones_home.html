@@ -1,3 +1,4 @@
+
 {%extends 'main/layout.html'%}
 {%block title%}
     База данных
@@ -5,17 +6,28 @@
 {%block content%}
     <div class="features">
         <h1>База Данных</h1>
-        {% if show_bone_parameters %}
-            {% for el in show_bone_parameters %}
-            <div class="alert alert-warning">
-                <h3>{{el.title}}</h3>
-                <p>{{el.year_pub}}</p>
-                <a href="{% url 'databones-detail' el.id %}" class="btn btn-warning">Details</a>
-            </div>
-            {% endfor %}
-        {% else %}
-        <p> Тут пока что ничего нет </p>
-        {% endif %}
-        {# Так надо писать комментарии #}
-    </div>
+        <table >
+        <thead>
+            <tr>
+                <th>Название статьи</th>
+                <th>Первый автор</th>
+                <th>Год</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            {% if table %}
+                {% for el in table %}
+                    <td>{{el.title}}</td>
+                    <td>{{el.first_author}}</td>
+                    <td>{{el.year_pub}}</td> 
+                    <td><a href="{% url 'databones-detail' el.id %}" class="btn btn-warning">Details</a></td>  
+            </tr>
+                {% endfor %}
+            {% else %}
+                <p> Тут пока что ничего нет </p>
+            {% endif %}
+        </tbody>
+    </table>
 {% endblock %}
