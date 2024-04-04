@@ -65,7 +65,7 @@ form {
     margin-top: 50px;
 }
 table { table-layout:fixed;
-    width: 95%;
+    width: 75%;
     border-collapse: collapse;
     border-style: 3px solid black;
     margin-left: 5%;
@@ -94,5 +94,5 @@ table { table-layout:fixed;
   }
   
   table {
-    background-color: #ffda33;
+    background-color: #f8f8f8;
   }
