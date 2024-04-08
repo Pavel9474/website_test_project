@@ -64,8 +64,13 @@ form {
     width: 500px;
     margin-top: 50px;
 }
-table { table-layout:fixed;
-    width: 75%;
+tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+table {
+    width: 100%;
     border-collapse: collapse;
     border-style: 3px solid black;
     margin-left: 5%;
@@ -95,4 +100,4 @@ table { table-layout:fixed;
   
   table {
     background-color: #f8f8f8;
-  }
+  } 
