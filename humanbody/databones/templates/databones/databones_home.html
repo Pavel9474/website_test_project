@@ -6,7 +6,7 @@
 {%block content%}
     <div class="features">
         <h1>База Данных</h1>
-        <table >
+        <table id="Bonedata">
         <thead>
             <tr>
                 <th>Название статьи</th>
@@ -31,3 +31,19 @@
         </tbody>
     </table>
 {% endblock %}
+
+{% block js_stuff %}
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('Bonedata').dataTable(
+                {"year_pub": [[0, "asc"]],
+                "pageLength": 10,
+                
+                }
+            );
+        });
+    </script>
+{% endblock js_stuff%}

@@ -15,7 +15,8 @@ def databones_home(request):
 def tablesort(request):
     table=Bonedata.objects.all()
     return render(request, "databones/databones_home.html", context={"table": table})
-
+def test_home(request):
+    return render(request,'databones/htmltable.html')
 class databones_Detailviev(DetailView):
     model = Bonedata
     template_name='databones/details_view.html'

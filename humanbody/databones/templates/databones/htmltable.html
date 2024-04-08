@@ -1,5 +1,8 @@
-<table>
-    <caption>Меню ресторана "Ромашка"</caption> 
+{%block content%}
+<table id="test" class="display" border="2" align="center">
+  
+  <div class="container">
+  <caption>Меню ресторана "Ромашка"</caption> 
     <tr>
       <th rowspan="2" class="first">Кухня</th>
       <th colspan="2">Холодные блюда</th>
@@ -79,3 +82,19 @@
       <td>Саварен "Триумф"</td>
       </tr>
     </table>
+{% endblock %}
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css"/>
+<script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script >
+        $(document).ready(function(){
+            $('test').dataTable(                
+                {
+
+                }
+            );
+        });
+    </script>
+</div>
+{% endblock js %}
