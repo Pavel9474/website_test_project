@@ -64,19 +64,20 @@ form {
     width: 500px;
     margin-top: 50px;
 }
+
 table { table-layout:fixed;
-    width: 95%;
+    width: 75%;
     border-collapse: collapse;
     border-style: 3px solid black;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-  tbody td {
-    text-align: center;
+  tbody, thead tr, td{
+    text-align: le;
   }
   tfoot {
-    background: url(leopardskin.jpg);
+    
     color: white;
     text-shadow: 1px 1px 1px black;
   }
@@ -86,7 +87,7 @@ table { table-layout:fixed;
   }
   
   tbody tr:nth-child(even) {
-    background-color: #e6e5d2;
+    background-color: #f8f8f5;
   }
   
   tbody tr {
@@ -94,5 +95,5 @@ table { table-layout:fixed;
   }
   
   table {
-    background-color: #ffda33;
+    background-color: #f8f8f8;
   }

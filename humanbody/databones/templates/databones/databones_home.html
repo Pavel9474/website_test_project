@@ -1,20 +1,21 @@
 
-{%extends 'main/layout.html'%}
+{% extends 'main/layout.html' %}
+{% load static %}
 {%block title%}
     База данных
 {% endblock %}
-{%block content%}
-    <div class="features">
+{%block content%} 
         <h1>База Данных</h1>
-        <table id="Bonedata">
-        <thead>
+<div class="features">
+<table id="databones">
+        <thead >
             <tr>
                 <th>Название статьи</th>
                 <th>Первый автор</th>
                 <th>Год</th>
                 <th> </th>
             </tr>
-        </thead>
+        </thead >
         <tbody>
             <tr>
             {% if table %}
@@ -23,27 +24,41 @@
                     <td>{{el.first_author}}</td>
                     <td>{{el.year_pub}}</td> 
                     <td><a href="{% url 'databones-detail' el.id %}" class="btn btn-warning">Details</a></td>  
-            </tr>
+            </tr>   
                 {% endfor %}
             {% else %}
                 <p> Тут пока что ничего нет </p>
             {% endif %}
         </tbody>
     </table>
-{% endblock %}
-
-{% block js_stuff %}
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('Bonedata').dataTable(
-                {"year_pub": [[0, "asc"]],
-                "pageLength": 10,
-                
-                }
-            );
+</div>
+    {% endblock %}
+    {% block js_static %}
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    
+      <link href="https://cdn.datatables.net/v/ju/jszip-3.10.1/dt-2.0.3/af-2.7.0/b-3.0.1/b-colvis-3.0.1/b-html5-3.0.1/b-print-3.0.1/fh-4.0.1/rg-1.5.0/sc-2.4.1/sb-1.7.0/sp-2.3.0/sl-2.0.0/datatables.min.css" rel="stylesheet">
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+      <script src="https://cdn.datatables.net/v/ju/jszip-3.10.1/dt-2.0.3/af-2.7.0/b-3.0.1/b-colvis-3.0.1/b-html5-3.0.1/b-print-3.0.1/fh-4.0.1/rg-1.5.0/sc-2.4.1/sb-1.7.0/sp-2.3.0/sl-2.0.0/datatables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#databones').DataTable({
+            paging:true,
+            scrollY: 500,
+            // dom: 'B<"clear">lfrtip',
+            buttons: {
+                name : 'primary'
+                [ 'copy', 'csv', 'excel', 'pdf' ]}
         });
+    } );
+    
     </script>
-{% endblock js_stuff%}
+    
+    {% endblock js_static %}
+
+
+
+
