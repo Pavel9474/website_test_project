@@ -1,6 +1,8 @@
 from django.urls import path, include
 from . import views
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.tablesort, name='databones_home'),
@@ -12,3 +14,8 @@ urlpatterns = [
     path('<int:pk>/delete', views.databones_Deleteviev.as_view(), name='databones-delete'),
     path('test', views.test_home, name='test'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
