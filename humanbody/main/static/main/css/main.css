@@ -69,8 +69,8 @@ tfoot input {
   padding: 3px;
   box-sizing: border-box;
 }
-table {
-    width: 100%;
+table  {
+    width: 50%;
     border-collapse: collapse;
     border-style: 3px solid black;
     margin-left: 5%;
@@ -101,3 +101,7 @@ table {
   table {
     background-color: #f8f8f8;
   } 
+  table.dataTable{
+    width: 50%;
+  }
+
