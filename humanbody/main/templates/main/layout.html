@@ -31,8 +31,9 @@
         }
     </style>
     </aside>
-    <main>
+    <main >
     {% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     {% endblock %}
     {% block js_static %}
     <script src="https://code.jquery.com/jquery-3.7.1.js"

@@ -69,14 +69,21 @@ tfoot input {
   padding: 3px;
   box-sizing: border-box;
 }
+.table.top{
+  padding-left: 5%;
+}
 table  {
-    width: 50%;
-    border-collapse: collapse;
+    width: 100%;
+    border-collapse: separate;
     border-style: 3px solid black;
     margin-left: 5%;
     margin-right: 5%;
+    padding-left: 5%;
+    border-bottom: 5px solid transparent;
 }
-
+div.dtsp-searchPane {
+  width: 50%;
+}
   tbody, thead tr, td{
     text-align: le;
   }
@@ -101,7 +108,7 @@ table  {
   table {
     background-color: #f8f8f8;
   } 
-  table.dataTable{
-    width: 50%;
-  }
+.table.top, .table.topStart{
+  padding-left: 5%;
+}
 
